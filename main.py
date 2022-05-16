@@ -17,17 +17,18 @@ while True:
             break
         else:
             print("This is not a file")
-
+print(requested_list)
 # define the relative path of the wafer
 for i in requested_list:
     os.chdir("../")
     path = os.getcwd()
-    subpath = (path + "\\HY202103\\" + wafer_id)
-    file_list = os.listdir(subpath)
-    for i in file_list:
-        real_path = subpath + '\\' + i
+    subpath = (path + "\\HY202103\\" + i)
+    file_list= os.listdir(subpath)
+    for j in file_list:
+        real_path = subpath + "\\" + j
         file_list2 = os.listdir(real_path)
-        final_list.append(file_list2)
+        for k in file_list2:
+            final_list.append(k)
     print(final_list)
 
 
