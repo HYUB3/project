@@ -1,40 +1,30 @@
-import xml.etree.ElementTree as ET
 import os
-from pathlib import Path
-import string
-import glob
-import pandas as pd
 
-
-values = []
-
-path = str(os.getcwd()).replace("src", "")
-wafer_folder = os.listdir(path + 'dat/HY202103')
+wafer_list = ['D07','D08','D23','D24']
+requested_list = []
 
 def data_reader():
     path = str(os.getcwd()).replace("src", "")
-    wafer_folder = os.listdir(path + 'dat/HY202103')
-    for wafer in wafer_folder:
-        print(path + 'dat/HY202103/' + wafer + '/')
-        for file in os.listdir(path + 'dat/HY202103/' + wafer + '/'):
+    while True:
+        wafer_id = input('wafer_id : ')
+        if wafer_id in wafer_list:
+            requested_list.append(wafer_id)
+            break
+        else:
+            if wafer_id == '':
+                for wafer_id in wafer_list:
+                    requested_list.append(wafer_id)
+                break
+            else:
+                print("This is not a file")
+    for wafer in requested_list:
+        for file in os.listdir(path + 'data/HY202103/' + wafer + '/'):
             if file.endswith(".xml"):
-                print(os.path.join(path + 'dat/HY202103/' + wafer + '/',
+                print(os.path.join(path + 'data/HY202103/' + wafer + '/',
                                    file))
-        for root, dirs, files in os.walk(path + 'dat/HY202103/' + wafer + '/'):
+        for root, dirs, files in os.walk(path + 'data/HY202103/' + wafer + '/'):
             for name in files:
                 print(name)
-                fpath = os.path.join(root, name)
-                tree = ET.parse(fpath)
-                wurzel = tree.getroot()
-                try:
-                    for child in wurzel.find('./ElectroOpticalMeasurements/ModulatorSite/Modulator/PortCombo/IVMeasurement'):
-                        values.append(child.text)
-                except Exception as e:
-                    print(e)
+
 
 data_reader()
-# tree = ET.parse('/Users/fabiankading/PycharmProjects/pythonProject3/dat/HY202103')
-# root = tree.getroot()
-# values = []
-# for child in root.find('./ElectroOpticalMeasurements/ModulatorSite/Modulator/PortCombo/IVMeasurement'):
-# values.append(child.text)
