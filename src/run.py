@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from datareader import *
+from loading import *
 
 
-data_reader()
+loading_xml(filenames)
