@@ -29,10 +29,6 @@ def data_reader():
                                 print(name)
 
 
-
-
-
-
 data_reader()
 
 
