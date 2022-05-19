@@ -19,6 +19,7 @@ while True:
             print("This is not a file")
 print(requested_list)
 
+
 # define the relative path of the wafer
 try:
     for i in requested_list:
