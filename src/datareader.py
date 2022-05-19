@@ -7,6 +7,7 @@ def data_reader():
     path = str(os.getcwd()).replace("src", "")
     while True:
         wafer_id = input('wafer_id : ')
+        wafer_cordinate = input('wafer_cordinate : ')
         if wafer_id in wafer_list:
             requested_list.append(wafer_id)
             break
@@ -17,14 +18,23 @@ def data_reader():
                 break
             else:
                 print("This is not a file")
+
     for wafer in requested_list:
-        for file in os.listdir(path + 'data/HY202103/' + wafer + '/'):
-            if file.endswith(".xml"):
-                print(os.path.join(path + 'data/HY202103/' + wafer + '/',
-                                   file))
-        for root, dirs, files in os.walk(path + 'data/HY202103/' + wafer + '/'):
-            for name in files:
-                print(name)
+        for folder in os.listdir(path + 'data/HY202103/' + wafer + '/'):
+            for root, dirs, files in os.walk(path + 'data/HY202103/' + wafer + '/'):
+                for name in files:
+                    if name.endswith(".xml"):
+                        if f'({wafer_cordinate})' in name:
+                            if 'LMZ' in name:
+                                print(name)
+
+
+
+
 
 
 data_reader()
+
+
+
+
