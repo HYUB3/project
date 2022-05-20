@@ -2,6 +2,7 @@ import os
 
 wafer_list = ['D07','D08','D23','D24']
 requested_list = []
+wafer_name = []
 
 def data_reader():
     path = str(os.getcwd()).replace("src", "")
@@ -26,11 +27,11 @@ def data_reader():
                     if name.endswith(".xml"):
                         if f'({wafer_cordinate})' in name:
                             if 'LMZ' in name:
-                                print(name)
+                                wafer_name.append(name)
 
+    print(wafer_name)
 
 data_reader()
-
-
-
+for i in wafer_name:
+    print(i)
 

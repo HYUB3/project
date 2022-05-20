@@ -13,7 +13,6 @@ from scipy.signal import find_peaks
 
 # get the data structure
 path = str(os.getcwd()).replace("src", "")
-print(path)
 tree = ET.parse(path + '\\data\\HY202103\\D07\\20190715_190855\\HY202103_D07_(0,0)_LION1_DCM_LMZC.xml')
 root = tree.getroot()
 values = []
@@ -47,7 +46,7 @@ plt.xlabel('Voltage in V')
 plt.grid('true')
 
 plt.tight_layout()
-plt.show()
+# plt.show()
 
 # fitting the iv measurement
 # first part of funktion
@@ -105,7 +104,7 @@ plt.xlabel('Voltage in V')
 plt.grid('true')
 
 plt.tight_layout()
-plt.show()
+# plt.show()
 
 # loading the wavelenght measurement
 wavelength = []
@@ -127,7 +126,7 @@ plt.legend(fontsize='small', title='DCBias in V', ncol=2)
 plt.xlabel('Wavelenght in nm')
 plt.ylabel('Measured transmission in dB')
 plt.title('Transmission spectral')
-plt.show()
+# plt.show()
 
 # fiiting of the wavelenght measurement
 x = np.array(wavelength[19])
@@ -181,7 +180,7 @@ plt.plot(x[n_max], four_deg_value[n_max], 'o', color='black', linewidth=2, label
 plt.plot(x[n_min], four_deg_value[n_min], 'o', color='black', linewidth=2, label='Minimal Value',
          markerfacecolor='green')
 plt.legend()
-plt.show()
+# plt.show()
 
 # fitting wavelenght 2
 liste = list(range(0, len(wavelength), 3))
@@ -199,7 +198,7 @@ plt.legend(fontsize='small', title='DCBias in V', ncol=2)
 plt.xlabel('Wavelenght in nm')
 plt.ylabel('Measured transmission in dB')
 plt.title('Transmission spectral')
-plt.show()
+# plt.show()
 
 # finding the minima and maxima
 plt.subplot(236)
@@ -217,7 +216,7 @@ plt.legend(fontsize='small', title='DCBias in V', ncol=2)
 plt.xlabel('Wavelenght in nm')
 plt.ylabel('Measured transmission in dB')
 plt.title('Transmission spectral min/max values')
-plt.show()
+# plt.show()
 
 #fitting of the linear line
 x = peaks_list[0][0]
