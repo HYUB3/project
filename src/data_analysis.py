@@ -1,4 +1,5 @@
 import time
+import os
 import warnings
 import xml.etree.ElementTree as ET
 import matplotlib.pyplot as plt
@@ -8,8 +9,12 @@ from sklearn.linear_model import LinearRegression
 import lmfit
 from scipy.signal import find_peaks
 
+
+
 # get the data structure
-tree = ET.parse('/Users/fabiankading/PycharmProjects/pr2/HY202103_D08_02_LION1_DCM_LMZC.xml')
+path = str(os.getcwd()).replace("src", "")
+print(path)
+tree = ET.parse(path + '\\data\\HY202103\\D07\\20190715_190855\\HY202103_D07_(0,0)_LION1_DCM_LMZC.xml')
 root = tree.getroot()
 values = []
 for child in root.find('./ElectroOpticalMeasurements/ModulatorSite/Modulator/PortCombo/IVMeasurement'):
