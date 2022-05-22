@@ -27,17 +27,17 @@ def graph(route, save, show, time):
         plt.grid('true')
         plt.tight_layout()
 
-        # plot of the wavelenght measurement
+        # plot of the wavelength measurement
         plt.subplot(333)
         liste = list(range(0, len(wavelength), 3))
         for i in liste:
             plt.plot(wavelength[i + 1], wavelength[i + 2], label=wavelength[i]['DCBias'])
         plt.legend(fontsize='small', title='DCBias in V', ncol=2)
-        plt.xlabel('Wavelenght in nm')
+        plt.xlabel('Wavelength in nm')
         plt.ylabel('Measured transmission in dB')
         plt.title('Transmission spectral')
 
-        # fiiting of the wavelenght measurement
+        # fitting of the wavelength measurement
         x = np.array(wavelength[19])
         print(x)
         y = np.array(wavelength[20])
@@ -64,7 +64,7 @@ def graph(route, save, show, time):
 
         plt.plot(x, four_deg_value, label='Fitted data')
         plt.legend(fontsize='small', title='DCBias in V', ncol=2)
-        plt.xlabel('Wavelenght in nm')
+        plt.xlabel('Wavelength in nm')
         plt.ylabel('Measured transmission in dB')
         plt.title('Transmission spectral')
 
@@ -82,7 +82,7 @@ def graph(route, save, show, time):
                 peaks_list.append([wavelength[i + 1][peaks_pos], wavelength[i + 2][peaks_pos]])  # add values for linear fit
 
         plt.legend(fontsize='small', title='DCBias in V', ncol=2)
-        plt.xlabel('Wavelenght in nm')
+        plt.xlabel('Wavelength in nm')
         plt.ylabel('Measured transmission in dB')
         plt.title('Transmission spectral min/max values')
 
@@ -93,3 +93,5 @@ def graph(route, save, show, time):
         plt.plot(x, y, 'yo', x, poly1d_fn(x), '--k')
         plt.savefig('fassung.png', dpi=150, bbox_inches='tight')
         plt.show()
+
+
