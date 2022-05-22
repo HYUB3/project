@@ -29,8 +29,5 @@ def data_reader():
                             if 'LMZ' in name:
                                 wafer_name.append(name)
 
-    print(wafer_name)
-data_reader()
-for i in wafer_name:
-    print(i)
+
 
