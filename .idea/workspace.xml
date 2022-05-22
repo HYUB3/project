@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1fb59e02-570b-446b-9686-7fbb30f7b7a4" name="Changes" comment="modifiying I-IL">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datareader.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/datareader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/graph.py" afterDir="false" />
+    <list default="true" id="1fb59e02-570b-446b-9686-7fbb30f7b7a4" name="Changes" comment="making file">
+      <change beforePath="$PROJECT_DIR$/res/results" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653189655319</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="making file">
+      <created>1653197527551</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1653197527551</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -279,6 +282,7 @@
     <MESSAGE value="L-IL2" />
     <MESSAGE value="modifiying data_analysis" />
     <MESSAGE value="modifiying I-IL" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifiying I-IL" />
+    <MESSAGE value="making file" />
+    <option name="LAST_COMMIT_MESSAGE" value="making file" />
   </component>
 </project>
