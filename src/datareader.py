@@ -31,7 +31,6 @@ def data_reader():
 
     print(wafer_name)
 
-data_reader()
 for i in wafer_name:
     print(i)
 
