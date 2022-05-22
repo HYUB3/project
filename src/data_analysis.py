@@ -304,8 +304,9 @@ df = pd.DataFrame([values],
 
 os.chdir("../")
 path = os.getcwd()
-print(f'{path}'+"\\project"+"\\result")
-df.to_csv(path_or_buf=f"{path}\\project\\result"+'testfile.csv', index=False)
+address =f"{path}\\project\\result"
+print(address)
+df.to_csv(f'{address}\\testfile1.csv', index=False)
 
 
 
