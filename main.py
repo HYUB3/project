@@ -19,45 +19,54 @@ while True:
             print("This is not a file")
 print(requested_list)
 
-
 # define the relative path of the wafer
-try:
-    for i in requested_list:
-        path = os.getcwd()
-        os.chdir("../")
-        subpath = (path + "\\data\HY202103\\" + i)
-        file_list= os.listdir(subpath)
-        for j in file_list:
-            real_path = subpath + "\\" + j
-            file_list2 = os.listdir(real_path)
-            for k in file_list2:
-                final_list.append(k)
-except NotADirectoryError:
-    pass
-
-print(final_list)
+for i in requested_list:
+    os.chdir("../")
+    path = os.getcwd()
+    subpath = (path + "\\HY202103\\" + i)
+    file_list= os.listdir(subpath)
+    for j in file_list:
+        real_path = subpath + "\\" + j
+        file_list2 = os.listdir(real_path)
+        for k in file_list2:
+            final_list.append(k)
+    print(final_list)
 
 
 
 # get the data structure
-def getIVmeasurement(wafer_id):
-    tree = ET.parse(wafer_id)
-    root = tree.getroot()
-    values = []
-    for child in root.find('./ElectroOpticalMeasurements/ModulatorSite/Modulator/PortCombo/IVMeasurement'):
-        values.append(child.text)
-    # load the iv measurement
-    voltage_string = values[0].split(',')
-    voltage = []
-    for i in voltage_string:
-        voltage.append(float(i))
-        print(voltage)
-
-    current_string = values[1].split(',')
-    current = []
-    for i in current_string:
-        current.append(float(i))
-        print(current)
-
-for i in final_list:
-    getIVmeasurement(i)
+# tree = ET.parse(wafer_id)
+# root = tree.getroot()
+# values = []
+# for child in root.find('./ElectroOpticalMeasurements/ModulatorSite/Modulator/PortCombo/IVMeasurement'):
+#     values.append(child.text)
+#
+# # load the iv measurement
+# voltage_string = values[0].split(',')
+# voltage = []
+# for i in voltage_string:
+#     voltage.append(float(i))
+#
+# current_string = values[1].split(',')
+# current = []
+# for i in current_string:
+#     current.append(float(i))
+#
+# # get the data structure
+# import xml.etree.ElementTree as ET
+# tree = ET.parse(wafer_id)
+# root = tree.getroot()
+# values = []
+# for child in root.find('./ElectroOpticalMeasurements/ModulatorSite/Modulator/PortCombo/IVMeasurement'):
+#     values.append(child.text)
+#
+# # load the iv measurement
+# voltage_string = values[0].split(',')
+# voltage = []
+# for i in voltage_string:
+#     voltage.append(float(i))
+#
+# current_string = values[1].split(',')
+# current = []
+# for i in current_string:
+#     current.append(float(i))
