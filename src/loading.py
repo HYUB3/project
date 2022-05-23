@@ -28,8 +28,8 @@ def data_reader(name_list):
                 print("This is not a file")
 
     for wafer in requested_list:
-        for folder in os.listdir(path + 'data/HY202103/' + wafer + '/'):
-            for root, dirs, files in os.walk(path + 'data/HY202103/' + wafer + '/'):
+        for folder in os.listdir(path + 'dat\HY202103\\' + wafer ):
+            for root, dirs, files in os.walk(path + 'dat\HY202103\\' + wafer ):
                 for name in files:
                     if name.endswith(".xml"):
                         if f'({wafer_cordinate})' in name:

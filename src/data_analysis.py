@@ -9,7 +9,7 @@ import lmfit
 from scipy.signal import find_peaks
 
 # get the data structure
-tree = ET.parse('/Users/fabiankading/PycharmProjects/pr2/HY202103_D08_02_LION1_DCM_LMZC.xml')
+tree = ET.parse('HY202103_D08_02_LION1_DCM_LMZC.xml')
 root = tree.getroot()
 values = []
 for child in root.find('./ElectroOpticalMeasurements/ModulatorSite/Modulator/PortCombo/IVMeasurement'):
