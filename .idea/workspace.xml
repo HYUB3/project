@@ -899,12 +899,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.project" />
       <item itemvalue="Python.datareader" />
-      <item itemvalue="Python.main" />
-      <item itemvalue="Python.run" />
-      <item itemvalue="Python.loadingxml" />
       <item itemvalue="Python.loading" />
+      <item itemvalue="Python.loadingxml" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.project" />
+      <item itemvalue="Python.run" />
     </list>
     <recent_temporary>
       <list>

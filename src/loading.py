@@ -7,6 +7,8 @@ requested_list = []
 values = []
 global name_list
 name_list = []
+global wafer_cordinate
+wafer_cordinate = 0
 
 
 def data_reader(name_list):
@@ -42,4 +44,6 @@ def data_reader(name_list):
                                 print(name)
                                 name_list.append(name)
                                 return
+
+
 
