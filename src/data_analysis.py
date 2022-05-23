@@ -225,13 +225,7 @@ plt.show()
 plt.plot(wavelength[19], poly1d_fn(wavelength[19]))
 
 
-#def data_read():
 
-
-
-
-
-#def plotting(iv_data, wavelenght_data):
 
 
 
