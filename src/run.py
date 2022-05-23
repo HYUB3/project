@@ -1,11 +1,10 @@
 import os
 from pathlib import Path
-from datareader import *
+from loading import *
 from loadingxml import *
+from data_plotting import *
 
 global name_list
 name_list = []
 
-data_reader(name_list)
-
-xml_loader()
+plotting()

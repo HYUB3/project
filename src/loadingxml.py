@@ -4,7 +4,7 @@ from loading import *
 import pandas as pd
 
 values = {'Lot' : [], 'Wafer' : [], 'Mask' : [], 'TestSite' : [], 'Name' : [],
-                'Row' : [], 'Column' : [], 'Voltage' : [], 'Current' : [], 'Wavelenght': []}
+                'Row' : [], 'Column' : [], 'Voltage' : [], 'Current' : [], 'Wavelength': []}
 dataframe_data = []
 path1 = str(os.getcwd()).replace("src", "")
 global name_list
@@ -12,7 +12,7 @@ name_list = []
 global iv_data
 iv_data = []
 global columns
-columns = ['Lot', 'Wafer', 'Mask', 'TestSite', 'Name', 'Row', 'Column', 'Voltage', 'Current', 'Wavelenght']
+columns = ['Lot', 'Wafer', 'Mask', 'TestSite', 'Name', 'Row', 'Column', 'Voltage', 'Current', 'Wavelength']
 
 
 data_reader(name_list)
@@ -50,7 +50,7 @@ def xml_loader():
             wavelength.append(child.attrib)
             for i in child:
                 wavelength.append(list(map(float, i.text.split(','))))
-        values['Wavelenght'].append(wavelength)
+        values['Wavelength'].append(wavelength)
         dataframe_data.append(values)
 
 
@@ -58,5 +58,5 @@ def xml_loader():
 xml_loader()
 
 
-print(dataframe_data[0]['Current'])
+#print(dataframe_data[0]['Wavelength'])
 print(len(dataframe_data))
