@@ -3,7 +3,6 @@ import os
 from loading import *
 import pandas as pd
 
-
 values = []
 dataframe_data = []
 path1 = str(os.getcwd()).replace("src", "")
@@ -16,15 +15,18 @@ columns = ['Lot', 'Wafer', 'Mask', 'TestSite', 'Name', 'Row', 'Column', 'Voltage
 
 data_reader(name_list)
 
+
 def findfile(name, path):
     for dirpath, dirname, filename in os.walk(path):
         if name in filename:
+            print(dirpath + name)
             return os.path.join(dirpath, name)
 
 
 def xml_loader():
     path1 = str(os.getcwd()).replace("src", "")
     for names in name_list:
+        wavelength = []
         filepath = findfile(names, path1)
         tree = ET.parse(filepath)
         root = tree.getroot()
@@ -40,19 +42,17 @@ def xml_loader():
         voltage = list(map(float, root.find('.//IVMeasurement/Voltage').text.split(',')))
         values.append(voltage)
         current = list(map(float, root.find('.//IVMeasurement/Current').text.split(',')))
-
         values.append(current)
+        for child in root.findall('./ElectroOpticalMeasurements/ModulatorSite/Modulator/PortCombo/WavelengthSweep'):
+            wavelength.append(child.attrib)
+            for i in child:
+                wavelength.append(list(map(float, i.text.split(','))))
+        values.append(wavelength)
+
         dataframe_data.append(values)
-
-
-
-
-
-
 
 
 xml_loader()
 print(values)
-print(*values, sep = "\n")
-print('hier', dataframe_data[1])
-
+print(*values, sep="\n")
+print(dataframe_data[1])
