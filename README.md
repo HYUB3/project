@@ -32,10 +32,10 @@ We have created a module to extract and analyze customer-supplied data, especial
 
 ## Usage
 ***
-1. We carried out this project using Pycharm. In order to run this program, the user must install the pycham.
-2. Run in Pycharm Run.py and open or select the data file you want to analyze.
-3. Write wafer or coordinates you want to analyze afterwards.
-4. Choose whether to show data, save figure, or save csv files.
+1. We carried out this project using Pycharm. In order to run this program, the user must install the pycharm.
+2. Run in Pycharm run.py and open or select the data file you want to analyze.
+3. Write wafer and coordinates you want to analyze afterwards.
+4. You can see the data, saved figure, or saved csv files.
 
 * If you do not run with Pycharm, you may experience an error that fails to stop while the program is in progress.
 
@@ -46,7 +46,7 @@ Usage Example을 함께 작성
 
 ## Environment
 ***
-* Python 3.8 
+* Python 3.9 
 * Windows 10
 <!--
 실행환경에 대해 작성하면 된다. OS나 컴파일러 혹은 Hardware와 관련된 환경
@@ -55,11 +55,14 @@ Usage Example을 함께 작성
 ## Files
 ***
 * src
-  * directory.py - If there is no directory, it is a code that functions to create a new directory.
-  * extract.py - It is a code that extracts information from a given xml data and has the ability to store it by replacing it with a file in csv format.
+  * data_analysis.py - If there is no directory, it is a code that functions to create a new directory.
+  * data_plotting.py - It is a code that extracts information from a given xml data and has the ability to store it by replacing it with a file in csv format.
   * graph.py - Using the polyfit function, we obtain the polynomial closest to a given data and represent it in graphs.
-  * path.py 
-  * process.py - Based on the options received from run.py, the code is executed by selecting specific properties (image, wafer, image) from the data.
+  * gui.py 
+  * L-IL.py - Based on the options received from run.py, the code is executed by selecting specific properties (image, wafer, image) from the data.
+  * loading.py
+  * loadingxml.py
+  * run.py
 * gitignore   - Files that do not need to be managed in the project were managed using the gitignore file to exclude them from git.
 * run.py      - It is the code that executes the project, and it receives several options to execute the Src file.
 <!--
