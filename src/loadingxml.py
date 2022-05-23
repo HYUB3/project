@@ -19,8 +19,12 @@ data_reader(name_list)
 def findfile(name, path):
     for dirpath, dirname, filename in os.walk(path):
         if name in filename:
-            print(dirpath + name)
-            return os.path.join(dirpath, name)
+            if wafer_cordinate in filename:
+                print(dirpath +'\\'+ name)
+                return os.path.join(dirpath, name)
+            else:
+
+
 
 
 def xml_loader():
@@ -53,6 +57,4 @@ def xml_loader():
 
 
 xml_loader()
-print(values)
-print(*values, sep="\n")
-print(dataframe_data[1])
+

@@ -11,23 +11,12 @@ import lmfit
 from scipy.signal import find_peaks
 from datareader import *
 
+
 data_reader()
 
 # get the data structure
 def data_extract():
-    for i in wafer_name:
-        print(i)
-        if 'D07' in i:
-            a = 'D07'
-        elif 'D08' in i:
-            a = 'D08'
-        elif 'D23' in i:
-            a = 'D23'
-        elif 'D24' in i:
-            a = 'D24'
-        path = str(os.getcwd()).replace("src", "")
-        print(path + 'data\\HY202103\\' + f'{a}' + '\\..\\' + f'{i}')
-    # tree = ET.parse(path + 'data\\HY202103\\' + f'{a}' + '\\..\\' + f'{i}')
+    tree = ET.parse('')
     root = tree.getroot()
     values = []
     for child in root.find('./ElectroOpticalMeasurements/ModulatorSite/Modulator/PortCombo/IVMeasurement'):
