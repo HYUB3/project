@@ -38,8 +38,12 @@ def data_reader(name_list):
                                 print(name)
                                 name_list.append(name)
                                 return
-                        elif 'LMZ' in name:
-                            name_list.append(name)
+                        elif f'({wafer_cordinate})' in name == '':
+                            if 'LMZ' in name:
+                                print('Multiple Wafer:')
+                                print(name)
+                                name_list.append(name)
+                                return
 
 
 
