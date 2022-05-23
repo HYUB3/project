@@ -1,14 +1,15 @@
 import os
 import xml.etree.ElementTree as ET
-from loadingxml import *
 
-wafer_list = ['D07','D08','D23','D24']
+
+wafer_list = ['D07', 'D08', 'D23', 'D24']
 requested_list = []
 values = []
 global name_list
 name_list = []
 
-def data_reader():
+
+def data_reader(name_list):
     path = str(os.getcwd()).replace("src", "")
     while True:
         wafer_id = input('wafer_id : ')
@@ -35,16 +36,6 @@ def data_reader():
                                 print(name)
                                 name_list.append(name)
                                 return
-                        #else:
-                            #print('All Wafers:')
-                            #print(name)
-                            #name_list.append(name)
-    xml_loader()
+                        elif 'LMZ' in name:
+                            name_list.append(name)
 
-
-
-
-
-
-
-data_reader()
