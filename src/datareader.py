@@ -1,4 +1,5 @@
 import os
+from loading import *
 
 wafer_list = ['D07','D08','D23','D24']
 requested_list = []

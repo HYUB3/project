@@ -1,6 +1,4 @@
 import os
-import xml.etree.ElementTree as ET
-
 
 wafer_list = ['D07', 'D08', 'D23', 'D24']
 requested_list = []
@@ -38,12 +36,3 @@ def data_reader(name_list):
                                 print(name)
                                 name_list.append(name)
                                 return
-                        elif f'({wafer_cordinate})' in name == '':
-                            if 'LMZ' in name:
-                                print('Multiple Wafer:')
-                                print(name)
-                                name_list.append(name)
-                                return
-
-
-
