@@ -14,7 +14,7 @@
 
 ## Description
 ***
-We created a program to analyze customer supplied data and extract it, especially a project to show and save information in graphs as png files and csv files to make a data file to check easily.
+We have created a module to extract and analyze customer-supplied data, especially a project to show and save information in graphs and csv files to make modulation performance of the modulator easier to see.
 
 
 ## Prerequisite
@@ -25,7 +25,7 @@ We created a program to analyze customer supplied data and extract it, especiall
 * Install `matplotlib.pyplot`. Used to vissualize data understanding prior to data analysis, or to visualize results after data analysis.
 * Install `lmfit`. Lmfit provides a high-level interface to non-linear optimization and curve fitting problems for Python.
   <https://lmfit.github.io/lmfit-py/>
-* If you want inastall all prerequistite, Write `pip install -r requirements.txt.`   
+* If you want inastall all prerequistite, Write `pip install -r requirement.txt`   
 <!--
 작성한 코드를 실행하기 전에 설치해야할 pakage나 의존성이 걸리는 문제
 -->
@@ -33,10 +33,9 @@ We created a program to analyze customer supplied data and extract it, especiall
 ## Usage
 ***
 1. We carried out this project using Pycharm. In order to run this program, the user must install the pycharm.
-2. Run in Pycharm run.py and choose the data file that you want to analyze.
-3. Write down the wafer or coordinates number that you want to analyze. 
-
-<!-- Choose whether to show data, save figure, or save csv files. -->
+2. Run in Pycharm Run.py and open or select the data file you want to analyze.
+3. Write wafer or coordinates you want to analyze afterwards.
+4. Choose whether to show data, save figure, or save csv files.
 
 * If you do not run with Pycharm, you may experience an error that fails to stop while the program is in progress.
 
