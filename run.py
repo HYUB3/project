@@ -1,7 +1,8 @@
 import sys
-from src import datareader
+from src import loading
 from pathlib import Path
 
 
 
-data_reader()
+
+
