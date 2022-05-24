@@ -7,9 +7,14 @@ from sklearn.metrics import r2_score
 from sklearn.linear_model import LinearRegression
 import lmfit
 from scipy.signal import find_peaks
+from datareader import *
 
+for i in list(set(wafer_name)):
+    path = str(os.getcwd()).replace("src", "")
+    for wafer in requested_list:
+        print(f'{path}' + 'data\HY202103' +'\\'+  f'{wafer}' + '\\'+'..\\' + f'{i}')
 # get the data structure
-tree = ET.parse('HY202103_D08_02_LION1_DCM_LMZC.xml')
+tree = ET.parse(f'{path}' + 'data\HY202103' +'\\'+  f'{wafer}' + '\\'+'..\\' + f'{i}')
 root = tree.getroot()
 values = []
 for child in root.find('./ElectroOpticalMeasurements/ModulatorSite/Modulator/PortCombo/IVMeasurement'):

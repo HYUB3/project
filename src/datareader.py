@@ -20,7 +20,7 @@ def data_reader():
                 break
             else:
                 print("This is not a file")
-
+    print(requested_list)
     for wafer in requested_list:
         for folder in os.listdir(path + 'data/HY202103/' + wafer + '/'):
             for root, dirs, files in os.walk(path + 'data/HY202103/' + wafer + '/'):
@@ -30,7 +30,7 @@ def data_reader():
                             if 'LMZ' in name:
                                 wafer_name.append(name)
 
+
+
 data_reader()
-for i in wafer_name:
-    print(i)
 
