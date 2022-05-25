@@ -32,9 +32,8 @@ def data_reader(name_list):
                     if name.endswith(".xml"):
                         if f'({wafer_cordinate})' in name:
                             if 'LMZ' in name:
-                                print('Single Wafer:')
-                                print(name)
                                 name_list.append(name)
+
     return
 
 data_reader(name_list)
