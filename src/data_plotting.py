@@ -64,14 +64,11 @@ def plotting():
         plt.title('Transmission spectral')
 
         plt.subplot(224)
-        for j in liste:
-            if test['Wavelength'][i][j]['DCBias'] == '0.0':
-                print('n')
-                plt.plot(test['Wavelength'][i][j + 1], test['Wavelength'][i][j + 2],
-                        label=test['Wavelength'][i][j]['DCBias'])
-            else:
-                print(test['Wavelength'][i][j]['DCBias'])
+        plt.plot(test['Wavelength'][i][1], test['Wavelength'][i][2],
+                 label=test['Wavelength'][i][3]['DCBias'])
         plt.show()
+        i = i + 1
+        print('Schleife')
 
 plotting()
 
