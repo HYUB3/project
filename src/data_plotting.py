@@ -57,15 +57,18 @@ def plotting():
         plt.subplot(223)
         liste = list(range(0, len(test['Wavelength'][i]), 3))
         for j in liste:
-            plt.plot(test['Wavelength'][i][i+1], test['Wavelength'][i][j + 2], label=test['Wavelength'][i][j]['DCBias'])
+            plt.plot(test['Wavelength'][i][j+1], test['Wavelength'][i][j + 2], label=test['Wavelength'][i][j]['DCBias'])
+
+            if test['Wavelength'][i][j]['DCBias'] == '0.0':
+                print('0.0')
         plt.legend(fontsize='small', title='DCBias in V', ncol=2)
         plt.xlabel('Wavelength in nm')
         plt.ylabel('Measured transmission in dB')
         plt.title('Transmission spectral')
 
         plt.subplot(224)
-        plt.plot(test['Wavelength'][i][1], test['Wavelength'][i][2],
-                 label=test['Wavelength'][i][3]['DCBias'])
+        plt.plot(test['Wavelength'][i][len(liste)-3], test['Wavelength'][i][len(liste)-2]
+                 ,label=test['Wavelength'][i][len(liste)-1]['DCBias'])
         plt.show()
         i = i + 1
         print('Schleife')
