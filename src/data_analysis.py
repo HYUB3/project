@@ -11,6 +11,7 @@ from scipy.signal import find_peaks
 import glob
 from glob import glob
 from loading import *
+from loadingxml import *
 from create import *
 
 wafer_list = ['D07', 'D08', 'D23', 'D24']

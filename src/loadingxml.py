@@ -15,19 +15,18 @@ global columns
 columns = ['Lot', 'Wafer', 'Mask', 'TestSite', 'Name', 'Row', 'Column', 'Voltage', 'Current', 'Wavelength']
 
 
+
 data_reader(name_list)
 name_list = sorted(list(set(name_list)))
 
 def findfile(name, path):
     for dirpath, dirname, filename in os.walk(path):
         if name in filename:
-            print(dirpath + name)
             return os.path.join(dirpath, name)
 
 
 def xml_loader():
     path1 = str(os.getcwd()).replace("src", "")
-    print(len(name_list))
     for names in name_list:
         wavelength = []
         filepath = findfile(names, path1)
@@ -59,4 +58,4 @@ xml_loader()
 
 
 #print(dataframe_data[0]['Wavelength'])
-print(len(dataframe_data))
+print(f'length of file : {len(dataframe_data)}')

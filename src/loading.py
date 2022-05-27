@@ -35,4 +35,3 @@ def data_reader(name_list):
                                 name_list.append(name)
 
     return
-
