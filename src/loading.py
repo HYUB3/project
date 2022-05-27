@@ -36,4 +36,3 @@ def data_reader(name_list):
 
     return
 
-data_reader(name_list)

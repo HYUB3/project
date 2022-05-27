@@ -3,7 +3,7 @@ import numpy as np
 import lmfit
 import matplotlib.pyplot as plt
 
-from loading import *
+
 from loadingxml import *
 
 def diode_function(x, a, b, c, d):

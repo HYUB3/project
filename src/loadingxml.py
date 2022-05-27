@@ -16,7 +16,7 @@ columns = ['Lot', 'Wafer', 'Mask', 'TestSite', 'Name', 'Row', 'Column', 'Voltage
 
 
 data_reader(name_list)
-
+name_list = sorted(list(set(name_list)))
 
 def findfile(name, path):
     for dirpath, dirname, filename in os.walk(path):
