@@ -11,6 +11,7 @@ from scipy.signal import find_peaks
 import glob
 from glob import glob
 from loading import *
+from create import *
 
 wafer_list = ['D07', 'D08', 'D23', 'D24']
 name_list = sorted(list(set(name_list)))
@@ -203,6 +204,7 @@ for name1 in name_list:
                          markerfacecolor='green')
                 plt.legend()
 
+
                 # fitting wavelenght 2
                 liste = list(range(0, len(wavelength), 3))
                 for i in liste:
@@ -244,7 +246,10 @@ for name1 in name_list:
                 y = peaks_list[0][1]
                 poly1d_fn = np.poly1d(np.polyfit(x, y, 1))
                 plt.plot(x, y, 'yo', x, poly1d_fn(x), '--k')
-                plt.savefig('fassung.png', dpi=150, bbox_inches='tight')
+                path = str(os.getcwd()).replace("src", "")
+                folderpath = (f'{path}/result')
+                print(f'{folderpath}'+'/graph_'+ f'{wafer1}_{name1}'+'.png')
+                plt.savefig(f'{folderpath}'+'/graph_'+ f'{wafer1}_{name1}'+'.png', dpi=150, bbox_inches='tight')
                 plt.show()
 
                 # # calculating the substraction data
@@ -294,15 +299,9 @@ for name1 in name_list:
                                            'X Value', 'Max Value in dB', 'Rsquare value of the ',
                                            'Design wavelength [nm]', 'Rsquare of IV', 'I at 1',
                                            'I at -1'])
-
-                df.to_csv('testfile.csv', index=False)
+                path = str(os.getcwd()).replace("src", "")
+                folderpath = (f'{path}/result')
+                df.to_csv(f'{folderpath}'+'/text_'+ f'{wafer1}_{name1}'+'.png', index=False)
         else:
             continue
-
-
-
-
-
-
-
 
