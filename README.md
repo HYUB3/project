@@ -1,4 +1,5 @@
-# Project_B3
+
+![header](https://capsule-render.vercel.app/api?type=slice&color=002266&height=300&section=header&text=Project%20B3&fontSize=110&fontColor=FFFF&rotate=20&fontAlignY=30&fontAlign=65)
 ***
 ## INDEX
 ***
@@ -44,20 +45,27 @@ We have created a module to extract and analyze customer-supplied data, especial
 * Windows 10
 
 
-## Files
+## <img src="https://img.shields.io/badge/files-4285F4?style=for-the-badge&logo=Files&logoColor=white">
+
 ***
-* src
-  * directory.py - If there is no directory, it is a code that functions to create a new directory.
-  * extract.py - It is a code that extracts information from a given xml data and has the ability to store it by replacing it with a file in csv format.
-  * graph.py - Using the polyfit function, we obtain the polynomial closest to a given data and represent it in graphs.
-  * path.py 
-  * process.py - Based on the options received from run.py, the code is executed by selecting specific properties (image, wafer, image) from the data.
+* src (여기 수정해야돼)
+  * create.py -
+  * data_analysis.py - If there is no directory, it is a code that functions to create a new directory.
+  * data_plotting.py - It is a code that extracts information from a given xml data and has the ability to store it by replacing it with a file in csv format.
+  * datareader.py - 
+  * graph.py - Using the lmfit function, we obtain the polynomial closest to a given data and represent it in graphs.
+  * loading.py - 
+  * loadingxml.py -
 * gitignore   - Files that do not need to be managed in the project were managed using the gitignore file to exclude them from git.
 * run.py      - It is the code that executes the project, and it receives several options to execute the Src file.
 
 
 ## Contributing
 If you have any errors or questions while using the code, please send an email to the address below.
+
+
+<img src="https://img.shields.io/badge/Adress-EA4335?style=for-the-badge&logo=Gmail&logoColor=white">
+
 - <chaeyoon20@hanyang.ac.kr>
 - <dbgmlcks53@hanyang.ac.kr>
 - <fabiankd31@gmail.com>
