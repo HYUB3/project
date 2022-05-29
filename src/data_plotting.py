@@ -1,10 +1,22 @@
+import warnings
+import xml.etree.ElementTree as ET
 import matplotlib.pyplot as plt
 import numpy as np
+from sklearn.metrics import r2_score
+from sklearn.linear_model import LinearRegression
 import lmfit
-import matplotlib.pyplot as plt
-from loading import *
-from loadingxml import *
+import pandas as pd
+from scipy.signal import find_peaks
+import glob
+from glob import glob
+from src.loading import *
+from src.loadingxml import *
+from src.create import *
 
+
+wafer_list = ['D07', 'D08', 'D23', 'D24']
+name_list = sorted(list(set(name_list)))
+print(name_list)
 
 def diode_function(x, a, b, c, d):
     return b * (np.exp((d * x) / (a * c)) - 1)
@@ -77,7 +89,6 @@ def plotting():
         if test['Wavelength'][i][j]['DCBias'] == '0.0' and k == 0:
             k = k + 1
             plt.subplot(224)
-            print('innerhalb der schkleife')
             print(k)
             plt.plot(test['Wavelength'][i][j + 1], test['Wavelength'][i][j + 2],
                      label=test['Wavelength'][i][j]['DCBias'])
@@ -118,15 +129,61 @@ def plotting():
                      label=test['Wavelength'][i][j]['DCBias'])
             fou_deg(test['Wavelength'][i][j + 1])
 
-
-
-
-
-
+            path = str(os.getcwd()).replace("src", "")
+            folderpath = (f'{path}/result')
+            print(f'{folderpath}' + '/graph_' + f'{wafer1}_{name1.replace("xml", "")}' + 'png')
+            plt.savefig(f'{folderpath}' + '/graph_' + f'{wafer1}_{name1.replace("xml", "")}' + 'png', dpi=150,
+                        bbox_inches='tight')
             plt.show()
 
-        i = i + 1
+for name1 in name_list:
+    for wafer1 in wafer_list:
+        if wafer1 in name1:
+            path = str(os.getcwd()).replace("src", "")
+            # pathroot = (path + 'data\HY202103'+ '\\' + f'{j}' +'\\' + '..\\'+ i)
+            file = glob(path + 'data\*\\' + f'{wafer1}\\*\\{name1}', recursive = True)
+            for one in file:
+                # get the data structure
+                tree = ET.parse(one)
+                root = tree.getroot()
+                values = []
+                for child in root.find('./ElectroOpticalMeasurements/ModulatorSite/Modulator/PortCombo/IVMeasurement'):
+                    values.append(child.text)
+                    plotting()
+                    # pandas
+                    element = root.find('.//TestSiteInfo')
+                    lot = element.attrib['Batch']
+                    wafer = element.attrib['Wafer']
+                    mask = element.attrib['Maskset']
+                    testSite = element.attrib['TestSite']
+                    die_row = element.attrib['DieRow']
+                    die_column = element.attrib['DieColumn']
+                    element1 = root.find('.//Modulator')
+                    name = element1.attrib['Name']
 
+                    operator = root.attrib['Operator']
+                    date = root.attrib['CreationDate']
+                    des_par = root.findall('.//DesignParameter')[1].text
 
+                    ''' #with variable
+                    data = []
+                    for key, value in sorted(rsq.items()):
+                        values = [lot, wafer, mask, testSite, die_row, die_column, date, name, key, round(value, 4), round(maximal[key], 2),
+                                  round(x_maximal[key]), des_par]
+                        data.append(values)
+                    '''
 
-plotting()
+                    values = [lot, wafer, mask, testSite, die_row, die_column, date, name, x_maximal, maximal,
+                              rsquare_measure, des_par,
+                              rsquare_Iv, current_plus1, current_minus1]
+                    df = pd.DataFrame([values],
+                                      columns=['Lot', 'Wafer', 'Mask', 'TestSite', 'Die Row', 'Die Column', 'Date',
+                                               'Name',
+                                               'X Value', 'Max Value in dB', 'Rsquare value of the ',
+                                               'Design wavelength [nm]', 'Rsquare of IV', 'I at 1',
+                                               'I at -1'])
+                    path = str(os.getcwd()).replace("src", "")
+                    folderpath = (f'{path}/result')
+                    df.to_csv(f'{folderpath}' + '/text_' + f'{wafer1}_{name1.replace("xml", "")}' + 'csv', index=False)
+            else:
+                continue
