@@ -116,8 +116,14 @@ def plotting():
             plt.plot(test['Wavelength'][i][j + 1], test['Wavelength'][i][j + 2],
                         label=test['Wavelength'][i][j]['DCBias'])
 
-        i = i + 1
+        path_for_saving = str(os.getcwd()).replace("src", "")
+        path1_for_saving = path_for_saving + '/result/'
+        string_png = str(name_list[i])
+        string2_png = string_png.replace('.xml', '.png')
+        plt.savefig(os.path.join(path1_for_saving, string2_png), bbox_inches='tight')
+
         plt.show()
+        i = i + 1
 
     print(len(fitted_data))
 
