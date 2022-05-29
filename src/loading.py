@@ -24,10 +24,10 @@ def data_reader(name_list):
                         list_folder = os.listdir(f'{path}' + '//data//HY202103//' + f'{wafer_id}/{numb}')
                         for filt in list_folder:
                             if 'LMZ' in filt:
-                                filterlist.append(filt)
+                                name_list.append(filt)
                     except NotADirectoryError:
                         break
-            print(len(filterlist))
+            print(len(name_list))
             break
         else:
             if wafer_id == '':
@@ -40,10 +40,10 @@ def data_reader(name_list):
                                 list_folder = os.listdir(f'{path}' + '//data//HY202103//' + f'{wafer_id}/{numb}')
                                 for filt in list_folder:
                                     if 'LMZ' in filt:
-                                        filterlist.append(filt)
+                                        name_list.append(filt)
                             except NotADirectoryError:
                                 break
-                print(len(filterlist))
+                print(len(name_list))
                 break
 
             else:

@@ -124,6 +124,7 @@ def plotting():
         plt.savefig(os.path.join(path1_for_saving, string2_png), bbox_inches='tight', dpi=150)
 
         #plt.show()
+        plt.close()
         i = i + 1
 
     print(len(fitted_data))
