@@ -58,6 +58,7 @@ We have created a module to extract and analyze customer-supplied data, especial
 ## <img src="https://img.shields.io/badge/project-4285F4?style=for-the-badge&logo=Files&logoColor=white">
   * gitignore   - Files that do not need to be managed in the project were managed using the gitignore file to exclude them from git.
   * run.py      - It is the code that executes the project, and it receives several options to execute the Src file.
+  * requirement.txt
 ## <img src="https://img.shields.io/badge/src-4285F4?style=for-the-badge&logo=Files&logoColor=white">
   * create.py - If there is no directory, it is a code that functions to create a new directory.
   * data_analysis.py - It is a code shows the graph and the result of fitting the graph using the lmfit function.
