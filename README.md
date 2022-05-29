@@ -44,7 +44,8 @@ We have created a module to extract and analyze customer-supplied data, especial
 2. Run in Pycharm run.py and open or select the data file you want to analyze.
 3. Write wafer or coordinates you want to analyze.
 
-
+####notes
+* If you do not enter anything in the input window, the program will be output for the entire wafer and the coordinates.
 * If you do not run with Pycharm, you may experience an error that fails to stop while the program is in progress.
 
 ***
@@ -58,13 +59,13 @@ We have created a module to extract and analyze customer-supplied data, especial
   * gitignore   - Files that do not need to be managed in the project were managed using the gitignore file to exclude them from git.
   * run.py      - It is the code that executes the project, and it receives several options to execute the Src file.
 ## <img src="https://img.shields.io/badge/src-4285F4?style=for-the-badge&logo=Files&logoColor=white">
-  * create.py -
-  * data_analysis.py - If there is no directory, it is a code that functions to create a new directory.
+  * create.py - If there is no directory, it is a code that functions to create a new directory.
+  * data_analysis.py - It is a code shows the graph and the result of fitting the graph using the lmfit function.
   * data_plotting.py - It is a code that extracts information from a given xml data and has the ability to store it by replacing it with a file in csv format.
-  * datareader.py - 
+  * datareader.py - It is a code that takes wafers and coordinates as input and finds the path to the file.
   * graph.py - Using the lmfit function, we obtain the polynomial closest to a given data and represent it in graphs.
-  * loading.py - 
-  * loadingxml.py -
+  * loading.py - It is a code that takes wafers and coordinates as input and finds the path to the file.
+  * loadingxml.py -It is a code that extracts information from a given xml data and stores data.
 
 
 ***
