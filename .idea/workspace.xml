@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1fb59e02-570b-446b-9686-7fbb30f7b7a4" name="Changes" comment="saving files">
+    <list default="true" id="1fb59e02-570b-446b-9686-7fbb30f7b7a4" name="Changes" comment="Data Frame">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data_plotting.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_plotting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/export.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loadingxml.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/loadingxml.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,12 +188,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.run" />
+      <item itemvalue="Python.directory" />
       <item itemvalue="Python.data_analysis" />
       <item itemvalue="Python.data_plotting" />
-      <item itemvalue="Python.directory" />
-      <item itemvalue="Python.loading" />
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.run" />
+      <item itemvalue="Python.loading" />
     </list>
     <recent_temporary>
       <list>
@@ -272,7 +270,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653809641428</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Data Frame">
+      <created>1653813397617</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1653813397617</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Data Frame">
+      <created>1653813627359</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1653813627359</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -306,7 +318,8 @@
     <MESSAGE value="modifying data_analysis.py" />
     <MESSAGE value="." />
     <MESSAGE value="saving files" />
-    <option name="LAST_COMMIT_MESSAGE" value="saving files" />
+    <MESSAGE value="Data Frame" />
+    <option name="LAST_COMMIT_MESSAGE" value="Data Frame" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pythonProject3$gui.coverage" NAME="gui Coverage Results" MODIFIED="1653312612048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
@@ -316,6 +329,6 @@
     <SUITE FILE_PATH="coverage/pythonProject3$loadingxml.coverage" NAME="loadingxml Coverage Results" MODIFIED="1653809092034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/pythonProject3$data_analysis.coverage" NAME="data_analysis Coverage Results" MODIFIED="1653801173263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/pythonProject3$data_plotting.coverage" NAME="data_plotting Coverage Results" MODIFIED="1653809025427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/pythonProject3$run.coverage" NAME="run Coverage Results" MODIFIED="1653813373060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pythonProject3$run.coverage" NAME="run Coverage Results" MODIFIED="1653813725507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

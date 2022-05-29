@@ -41,6 +41,7 @@ def plotting():
     fitting_row_x = np.asarray(0)
     fitting_row_y = np.asarray(0)
     for test in dataframe_data:
+        plt.figure()
         plt.subplot(221)
         plt.plot(test['Voltage'][i], abs(np.asarray(test['Current'][i])), color='black', marker='o',
                  markeredgecolor='black',
