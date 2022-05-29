@@ -41,7 +41,7 @@ def plotting():
     fitting_row_x = np.asarray(0)
     fitting_row_y = np.asarray(0)
     for test in dataframe_data:
-        plt.subplot(231)
+        plt.subplot(221)
         plt.plot(test['Voltage'][i], abs(np.asarray(test['Current'][i])), color='black', marker='o',
                  markeredgecolor='black',
                  markerfacecolor='red')
@@ -50,7 +50,7 @@ def plotting():
         plt.ylabel('Current in A')
         plt.xlabel('Voltage in V')
         plt.grid('true')
-        plt.tight_layout()
+
 
         result1 = model1.fit(abs(np.asarray(test['Current'][i][0:10])), x=np.asarray(test['Voltage'][i][0:10])
                              , params=params)
@@ -120,9 +120,9 @@ def plotting():
         path1_for_saving = path_for_saving + '/result/'
         string_png = str(name_list[i])
         string2_png = string_png.replace('.xml', '.png')
-        plt.savefig(os.path.join(path1_for_saving, string2_png), bbox_inches='tight')
+        plt.savefig(os.path.join(path1_for_saving, string2_png), bbox_inches='tight', dpi=150)
 
-        plt.show()
+        #plt.show()
         i = i + 1
 
     print(len(fitted_data))
