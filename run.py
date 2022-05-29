@@ -1,5 +1,5 @@
 import sys
-from src import loading
+from src.data_analysis import *
 from pathlib import Path
 
 

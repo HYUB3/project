@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 import os
-from loading import *
+from src.loading import *
 import pandas as pd
 
 values = {'Lot' : [], 'Wafer' : [], 'Mask' : [], 'TestSite' : [], 'Name' : [],

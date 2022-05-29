@@ -10,9 +10,9 @@ import pandas as pd
 from scipy.signal import find_peaks
 import glob
 from glob import glob
-from loading import *
-from loadingxml import *
-from create import *
+from src.loading import *
+from src.loadingxml import *
+from src.create import *
 
 wafer_list = ['D07', 'D08', 'D23', 'D24']
 name_list = sorted(list(set(name_list)))
@@ -208,8 +208,10 @@ for name1 in name_list:
 
                 # fitting wavelenght 2
                 liste = list(range(0, len(wavelength), 3))
-                for i in liste:
-                    wavelength[i + 2] = np.array(wavelength[i + 2]) - four_deg_value
+                for j in liste:
+                    wavelength[j + 2] = wavelength[j + 2] - fou_deg(wavelength[j + 1])
+                    plt.plot(wavelength[j + 1], wavelength[j + 2],
+                             label=wavelength[j]['DCBias'])
 
                 # plot fitted
                 plt.subplot(335)
@@ -249,8 +251,8 @@ for name1 in name_list:
                 plt.plot(x, y, 'yo', x, poly1d_fn(x), '--k')
                 path = str(os.getcwd()).replace("src", "")
                 folderpath = (f'{path}/result')
-                print(f'{folderpath}'+'/graph_'+ f'{wafer1}_{name1}'+'.png')
-                plt.savefig(f'{folderpath}'+'/graph_'+ f'{wafer1}_{name1}'+'.png', dpi=150, bbox_inches='tight')
+                print(f'{folderpath}'+'/graph_'+ f'{wafer1}_{name1.replace("xml","")}'+'png')
+                plt.savefig(f'{folderpath}'+'/graph_'+ f'{wafer1}_{name1.replace("xml","")}'+'png', dpi=150, bbox_inches='tight')
                 plt.show()
 
                 # # calculating the substraction data
@@ -302,7 +304,7 @@ for name1 in name_list:
                                            'I at -1'])
                 path = str(os.getcwd()).replace("src", "")
                 folderpath = (f'{path}/result')
-                df.to_csv(f'{folderpath}'+'/text_'+ f'{wafer1}_{name1}'+'.png', index=False)
+                df.to_csv(f'{folderpath}'+'/text_'+ f'{wafer1}_{name1.replace("xml","")}'+'csv', index=False)
         else:
             continue
 
