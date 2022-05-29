@@ -61,9 +61,8 @@ We have created a module to extract and analyze customer-supplied data, especial
   * requirement.txt
 ## <img src="https://img.shields.io/badge/src-4285F4?style=for-the-badge&logo=Files&logoColor=white">
   * create.py - If there is no directory, it is a code that functions to create a new directory.
-  * data_analysis.py - It is a code shows the graph and the result of fitting the graph using the lmfit function.
+  * export.py - It is a code to save the csv file in the 'result' folder.
   * data_plotting.py - It is a code that extracts information from a given xml data and has the ability to store it by replacing it with a file in csv format.
-  * graph.py - Using the lmfit function, we obtain the polynomial closest to a given data and represent it in graphs.
   * loading.py - It is a code that takes wafers and coordinates as input and finds the path to the file.
   * loadingxml.py -It is a code that extracts information from a given xml data and stores data.
 
