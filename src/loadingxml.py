@@ -3,7 +3,7 @@ import os
 from src.loading import *
 import pandas as pd
 
-values = {'Lot' : [], 'Wafer' : [], 'Mask' : [], 'TestSite' : [], 'Name' : [],
+values = {'Lot' : [], 'Wafer' : [], 'Mask' : [], 'TestSite' : [], 'Name' : [], 'Date' : [],
                 'Row' : [], 'Column' : [], 'Voltage' : [], 'Current' : [], 'Wavelength': [], 'Min': [], 'Max': [],
           'R Square': []}
 dataframe_data = []
@@ -42,6 +42,7 @@ def xml_loader():
         values['Name'].append(names.attrib['Name'])
         values['Row'].append(Info_Data['DieRow'])
         values['Column'].append(Info_Data['DieColumn'])
+        values['Date'].append(root.attrib['CreationDate'])
         voltage = list(map(float, root.find('.//IVMeasurement/Voltage').text.split(',')))
         values['Voltage'].append(voltage)
         current = list(map(float, root.find('.//IVMeasurement/Current').text.split(',')))
