@@ -4,6 +4,7 @@ import lmfit
 import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score
 
+from src.create import *
 from src.loading import *
 from src.loadingxml import *
 
