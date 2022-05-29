@@ -2,9 +2,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import lmfit
 import matplotlib.pyplot as plt
-from loading import *
-from loadingxml import *
+from sklearn.metrics import r2_score
 
+from src.loading import *
+from src.loadingxml import *
+
+fitted_data = []
 
 def diode_function(x, a, b, c, d):
     return b * (np.exp((d * x) / (a * c)) - 1)
@@ -30,7 +33,6 @@ params.add("c", value=1)
 params.add("d", value=1)
 params.add("e", value=1)
 
-fitted_values = []
 
 
 def plotting():
@@ -77,56 +79,44 @@ def plotting():
         if test['Wavelength'][i][j]['DCBias'] == '0.0' and k == 0:
             k = k + 1
             plt.subplot(224)
-            print('innerhalb der schkleife')
-            print(k)
             plt.plot(test['Wavelength'][i][j + 1], test['Wavelength'][i][j + 2],
                      label=test['Wavelength'][i][j]['DCBias'])
             fou_deg = np.poly1d(
                 np.polyfit(np.asarray(test['Wavelength'][i][j + 1]), np.asarray(test['Wavelength'][i][j + 2])
                            , 4))
-            four_deg_value = fou_deg(np.asarray(test['Wavelength'][i][j + 1]))
-            n_max = four_deg_value.argmax()
-            print('Maximal value of the fitted function:', four_deg_value[n_max], 'X value:',
-                  np.asarray(test['Wavelength'][i][j + 1])[n_max])
-            n_min = four_deg_value.argmin()
-            print('Minimal value of the fitted function:', four_deg_value[n_min], 'Y Value:',
-                  np.asarray(test['Wavelength'][i][j + 1])[n_max])
-            x_maximal = np.asarray(test['Wavelength'][i][j + 1])[n_max]
-            maximal = four_deg_value[n_max]
-            plt.plot(test['Wavelength'][i][j + 1], fou_deg(np.asarray(test['Wavelength'][i][j + 1])),
-                     label='4th degree')
-            plt.plot(np.asarray(test['Wavelength'][i][j + 1])[n_max], four_deg_value[n_max], 'o', color='black',
-                     linewidth=2, label='Maximal Value',
-                     markerfacecolor='red')
-            plt.plot(np.asarray(test['Wavelength'][i][j + 1])[n_min], four_deg_value[n_min], 'o', color='black',
-                     linewidth=2, label='Minimal Value',
-                     markerfacecolor='green')
-            plt.legend(fontsize='small', title='DCBias in V', ncol=2)
-            plt.xlabel('Wavelength in nm')
-            plt.ylabel('Measured transmission in dB')
-            plt.title('Transmission spectral')
+        four_deg_value = fou_deg(np.asarray(test['Wavelength'][i][j + 1]))
+        n_max = four_deg_value.argmax()
+        n_min = four_deg_value.argmin()
+        r2 = r2_score(np.asarray(test['Wavelength'][i][j + 1]), fou_deg(np.asarray(test['Wavelength'][i][j + 1])))
+        plt.plot(test['Wavelength'][i][j + 1], fou_deg(np.asarray(test['Wavelength'][i][j + 1])),
+                    label='4th degree')
+        plt.plot(np.asarray(test['Wavelength'][i][j + 1])[n_max], four_deg_value[n_max], 'o', color='black',
+                    linewidth=2, label='Maximal Value',
+                    markerfacecolor='red')
+        plt.plot(np.asarray(test['Wavelength'][i][j + 1])[n_min], four_deg_value[n_min], 'o', color='black',
+                    linewidth=2, label='Minimal Value',
+                    markerfacecolor='green')
 
-            #fitted_values.extend('Minimal value of the fitted function:', four_deg_value[n_min], 'Y Value:',
-                  #np.asarray(test['Wavelength'][i][j + 1])[n_max], test['Lot'], test['Wafer'])
-            #fitted_values.extend('Minimal value of the fitted function:', four_deg_value[n_min], 'Y Value:',
-                  #np.asarray(test['Wavelength'][i][j + 1])[n_min], test['Lot'], test['Wafer'])
-            #print(fitted_values)
-
+        plt.legend(fontsize='small', title='DCBias in V', ncol=2)
+        plt.xlabel('Wavelength in nm')
+        plt.ylabel('Measured transmission in dB')
+        plt.title('Transmission spectral')
 
             #substraction:
+            # fitting wavelenght 2
+        test['Min'].append(four_deg_value[n_min])
+        test['Max'].append(four_deg_value[n_max])
+        test['R Square'].append(r2)
+
+        fitted_data.append(test)
+
+        for j in liste:
+            test['Wavelength'][i][j + 2] = test['Wavelength'][i][j + 2] - fou_deg(test['Wavelength'][i][j + 1])
             plt.plot(test['Wavelength'][i][j + 1], test['Wavelength'][i][j + 2],
-                     label=test['Wavelength'][i][j]['DCBias'])
-            fou_deg(test['Wavelength'][i][j + 1])
-
-
-
-
-
-
-            plt.show()
+                        label=test['Wavelength'][i][j]['DCBias'])
 
         i = i + 1
+        plt.show()
 
+    print(len(fitted_data))
 
-
-plotting()

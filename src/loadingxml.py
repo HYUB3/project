@@ -1,10 +1,11 @@
 import xml.etree.ElementTree as ET
 import os
-from loading import *
+from src.loading import *
 import pandas as pd
 
 values = {'Lot' : [], 'Wafer' : [], 'Mask' : [], 'TestSite' : [], 'Name' : [],
-                'Row' : [], 'Column' : [], 'Voltage' : [], 'Current' : [], 'Wavelength': []}
+                'Row' : [], 'Column' : [], 'Voltage' : [], 'Current' : [], 'Wavelength': [], 'Min': [], 'Max': [],
+          'R Square': []}
 dataframe_data = []
 path1 = str(os.getcwd()).replace("src", "")
 global name_list
@@ -12,7 +13,7 @@ name_list = []
 global iv_data
 iv_data = []
 global columns
-columns = ['Lot', 'Wafer', 'Mask', 'TestSite', 'Name', 'Row', 'Column', 'Voltage', 'Current', 'Wavelength']
+columns = ['Lot', 'Wafer', 'Mask', 'TestSite', 'Name', 'Row', 'Column', 'Voltage', 'Current', 'Wavelength', 'Min']
 
 
 
@@ -51,7 +52,6 @@ def xml_loader():
                 wavelength.append(list(map(float, i.text.split(','))))
         values['Wavelength'].append(wavelength)
         dataframe_data.append(values)
-
 
 
 xml_loader()

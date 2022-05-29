@@ -33,5 +33,4 @@ def data_reader(name_list):
                         if f'({wafer_cordinate})' in name:
                             if 'LMZ' in name:
                                 name_list.append(name)
-
     return

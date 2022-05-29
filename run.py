@@ -1,7 +1,12 @@
 import sys
-from src import loading
-from pathlib import Path
+import os
+from src.data_plotting import *
 
+
+path = str(os.getcwd()).replace("src", "")
+sys.path.append(path)
+
+plotting()
 
 
 
