@@ -25,7 +25,6 @@ def export_csv():
                                    'Min': dict_data['Min'],
                                    'Max': dict_data['Max'],
                                    'R Square': dict_data['R Square']})
-        print(data_frame)
         string = str(name_list[i])
         string2 = string.replace('.xml', '.csv')
         data_frame.to_csv(os.path.join(path1, string2))

@@ -190,12 +190,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.run" />
-      <item itemvalue="Python.directory" />
       <item itemvalue="Python.data_analysis" />
       <item itemvalue="Python.data_plotting" />
-      <item itemvalue="Python.main" />
+      <item itemvalue="Python.directory" />
       <item itemvalue="Python.loading" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.run" />
     </list>
     <recent_temporary>
       <list>
