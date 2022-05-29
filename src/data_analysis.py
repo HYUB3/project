@@ -24,8 +24,9 @@ def function(x, a, b, c, d, e):
 
 def diode_function(x, a, b, c, d):
     return b * (np.exp((d * x) / (a * c)) - 1)
-
+print('hier')
 for name1 in name_list:
+    print('hier2')
     for wafer1 in wafer_list:
         if wafer1 in name1:
             path = str(os.getcwd()).replace("src", "")
@@ -241,6 +242,7 @@ for name1 in name_list:
                 plt.xlabel('Wavelenght in nm')
                 plt.ylabel('Measured transmission in dB')
                 plt.title('Transmission spectral min/max values')
+                plt.show()
 
                 # fitting of the linear line
                 x = peaks_list[0][0]
