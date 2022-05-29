@@ -25,6 +25,7 @@ def data_reader(name_list):
             else:
                 print("This is not a file")
 
+
     for wafer in requested_list:
         for folder in os.listdir(path + '/data/HY202103/' + wafer + '/'):
             for root, dirs, files in os.walk(path + '/data/HY202103/' + wafer + '/'):
@@ -33,4 +34,5 @@ def data_reader(name_list):
                         if f'({wafer_coordinate})' in name:
                             if 'LMZ' in name:
                                 name_list.append(name)
+    print(sorted(list(set(name_list))))
     return

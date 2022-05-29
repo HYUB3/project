@@ -9,7 +9,6 @@ def export_csv():
     i = 0
     for dict_data in fitted_data:
         data_frame = pd.DataFrame.from_dict(dict_data, orient='index')
-        print(data_frame)
         string = str(name_list[i])
         string2 = string.replace('.xml', '.csv')
         data_frame.to_csv(os.path.join(path1, string2))
