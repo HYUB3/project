@@ -26,7 +26,7 @@ We have created a module to extract and analyze customer-supplied data, especial
 
 
 ***
-## Prequisite
+## Preprequisite
 ***
 * Install `pandas` to process data. It is known as an essential library for tasks such as data analysis using Python. <http://pandas.pydata.org/pandas-docs/stable/>
 * Install `xml.etree.elementTree`. The module implements a simple and efficient API for parsing and creating XML data.
