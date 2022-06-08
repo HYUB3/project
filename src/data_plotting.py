@@ -56,7 +56,7 @@ def plotting():
         result1 = model1.fit(abs(np.asarray(test['Current'][i][0:10])), x=np.asarray(test['Voltage'][i][0:10])
                              , params=params)
         result2 = model2.fit(abs(np.asarray(test['Current'][i][8:13])), x=np.asarray(test['Voltage'][i][8:13])
-                             , params=params2)
+                             , params=params2, nan_policy='propagate')
         plt.subplot(222)
         plt.plot(test['Voltage'][i], abs(np.asarray(test['Current'][i])), 'x', color='black')
         plt.plot(np.asarray(test['Voltage'][i][0:10]), result1.best_fit, '--r')
@@ -89,7 +89,9 @@ def plotting():
         four_deg_value = fou_deg(np.asarray(test['Wavelength'][i][j + 1]))
         n_max = four_deg_value.argmax()
         n_min = four_deg_value.argmin()
-        r2 = r2_score(np.asarray(test['Wavelength'][i][j + 1]), fou_deg(np.asarray(test['Wavelength'][i][j + 1])))
+        b = fou_deg(np.asarray(test['Wavelength'][i][j + 1]))
+        r2 = r2_score(np.asarray(test['Wavelength'][i][j + 1]), b)
+        print(r2)
         plt.plot(test['Wavelength'][i][j + 1], fou_deg(np.asarray(test['Wavelength'][i][j + 1])),
                     label='4th degree')
         plt.plot(np.asarray(test['Wavelength'][i][j + 1])[n_max], four_deg_value[n_max], 'o', color='black',

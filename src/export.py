@@ -2,7 +2,8 @@ import pandas as pd
 from src.data_plotting import *
 
 plotting()
-
+daten = []
+daten = pd.DataFrame()
 
 def export_csv():
     path = str(os.getcwd()).replace("src", "")
@@ -29,4 +30,6 @@ def export_csv():
         string2 = string.replace('.xml', '.csv')
         data_frame.to_csv(os.path.join(path1, string2))
         i = i + 1
+        daten.append(data_frame)
+    daten.to_csv(os.path.join(path1, 'complete2.csv'))
 
