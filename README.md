@@ -59,6 +59,7 @@ We have created a module to extract and analyze customer-supplied data, especial
   * gitignore   - Files that do not need to be managed in the project were managed using the gitignore file to exclude them from git.
   * run.py      - It is the code that executes the project, and it receives several options to execute the Src file.
   * requirement.txt
+  * Jupyteranalysis.ipynb - It is a file that can be used in jupyter notebook, you can check files of 'result' folder through the data analysis graph.
 ## <img src="https://img.shields.io/badge/src-4285F4?style=for-the-badge&logo=Files&logoColor=white">
   * create.py - If there is no directory, it is a code that functions to create a new directory.
   * export.py - It is a code to save the csv file in the 'result' folder.
