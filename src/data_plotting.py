@@ -90,7 +90,8 @@ def plotting():
         n_max = four_deg_value.argmax()
         n_min = four_deg_value.argmin()
         b = fou_deg(np.asarray(test['Wavelength'][i][j + 1]))
-        r2 = r2_score(np.asarray(test['Wavelength'][i][j + 1]), b)
+        r2 = r2_score(abs(np.asarray(test['Wavelength'][i][j + 2])), abs(b))
+        r2 = r2*100
         print(r2)
         plt.plot(test['Wavelength'][i][j + 1], fou_deg(np.asarray(test['Wavelength'][i][j + 1])),
                     label='4th degree')

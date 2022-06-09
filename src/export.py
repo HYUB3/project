@@ -2,7 +2,6 @@ import pandas as pd
 from src.data_plotting import *
 
 plotting()
-daten = []
 daten = pd.DataFrame()
 
 def export_csv():
@@ -14,7 +13,6 @@ def export_csv():
                      dict_data['Date'], dict_data['Row'], dict_data['Column'], dict_data['Min'], dict_data['Max'],
                      dict_data['R Square']]
 
-        print(new_frame)
         data_frame = pd.DataFrame({'Lot': dict_data['Lot'],
                                    'Wafer': dict_data['Wafer'],
                                    'Mask': dict_data['Mask'],
@@ -27,9 +25,11 @@ def export_csv():
                                    'Max': dict_data['Max'],
                                    'R Square': dict_data['R Square']})
         string = str(name_list[i])
+        print(data_frame)
         string2 = string.replace('.xml', '.csv')
         data_frame.to_csv(os.path.join(path1, string2))
-        i = i + 1
         daten.append(data_frame)
+        i = i + 1
+    print(daten)
     daten.to_csv(os.path.join(path1, 'complete2.csv'))
 
