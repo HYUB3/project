@@ -4,27 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1fb59e02-570b-446b-9686-7fbb30f7b7a4" name="Changes" comment="loading">
-      <change afterPath="$PROJECT_DIR$/Jupyteranalysis.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project - B3/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project - B3/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project - B3/doc/documentation" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project - B3/requirement.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project - B3/run.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project - B3/src/directory.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project - B3/src/extract.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project - B3/src/graph.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project - B3/src/gui.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project - B3/src/path.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project - B3/src/process.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project - B3/src/wtw.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1fb59e02-570b-446b-9686-7fbb30f7b7a4" name="Changes" comment="Jupyter">
+      <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jupyter analysis.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jupyteranalysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Jupyteranalysis.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/complete.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/export.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/export.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loadingxml.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/loadingxml.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -343,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654415811744</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Jupyter">
+      <created>1654437994551</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1654437994551</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -380,6 +373,7 @@
     <MESSAGE value="saving files" />
     <MESSAGE value="Data Frame" />
     <MESSAGE value="loading" />
-    <option name="LAST_COMMIT_MESSAGE" value="loading" />
+    <MESSAGE value="Jupyter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Jupyter" />
   </component>
 </project>
